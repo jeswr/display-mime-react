@@ -1,7 +1,7 @@
 import React from 'react';
-import { useState } from '@jeswr/use-state'
+import { useState } from '@jeswr/use-state';
 import { getType } from 'mime';
-import type { DisplayMimePrimitiveProps, MimeDisplayer } from '../types'
+import type { DisplayMimePrimitiveProps, MimeDisplayer } from '../types';
 
 export function DisplayMimePrimitive({
   link,
@@ -23,8 +23,8 @@ export function DisplayMimePrimitive({
     }
   }
   const [DisplayState, setDisplayState] = useState<MimeDisplayer>(Display);
-  return <DisplayState link={link} {...props} 
-    onError={e => {
+  return <DisplayState link={link} {...props}
+    onError={(e) => {
       /**
        * If there is an error with loading then revert the display component
        * to be the default one. If this has already been done then we propogate
@@ -33,7 +33,7 @@ export function DisplayMimePrimitive({
       if (!(Display instanceof DefaultDisplay)) {
         setDisplayState(DefaultDisplay);
       } else {
-        onError?.(e) 
+        onError?.(e);
       }
     }} />;
 }
