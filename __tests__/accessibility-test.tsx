@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
-import { DisplayMimePrimitive, defaultMimeMappings, IframeMimeDisplayer } from '../lib'
+import { DisplayMimePrimitive, defaultMimeMappings, IframeMimeDisplayer } from '../lib';
 
 expect.extend(toHaveNoViolations);
 
